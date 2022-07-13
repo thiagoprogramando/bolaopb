@@ -1,0 +1,14 @@
+<!--**
+ * @author Cesar Szpak - Celke -   cesar@celke.com.br
+ * @pagina desenvolvida usando framework bootstrap,
+ * o código é aberto e o uso é free,
+ * porém lembre -se de conceder os créditos ao desenvolvedor.
+ *-->
+ <!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>CRIAR</title>
+	<head>
+	<body>
+		<table border="1"><tr><td colspan="5"><center><font style="text-align: center; font-size: 20px;"><strong>Planilha Com Palpites</strong></font></center></tr><td colspan="5"><center><font style="text-align: center; font-size: 30px;"><strong> Itália - Silverstone </strong></font></center></tr></tr><tr><td><b>Nome</b></td><td><b>Email</b></td><td><b>1° Corrida</b></td><td><b>2° Corrida</b></td><td><b>3° Corrida</b></td><td><b>4° Corrida</b></td><td><b>5° Corrida</b></td><td><b>6° Corrida</b></td><td><b>7° Corrida</b></td><td><b>8° Corrida</b></td><td><b>9° Corrida</b></td><td><b>10° Corrida</b></td><td><b>1° Grid</b></td><td><b>2° Grid</b></td><td><b>3° Grid</b></td><td><b>4° Grid</b></td><td><b>Melhor Volta</b></td></tr><tr><td>Thiago</td><td>thiago.or.code@gmail.com</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>oi</td></tr><tr><td>Thiago</td><td>thiago.or.code@gmail.com</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td><td>ttttttt</td></tr>
