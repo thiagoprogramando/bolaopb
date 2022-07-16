@@ -50,6 +50,7 @@
 	    $html .= '<td><b>10° Corrida</b></td>';
         $html .= '<td><b>Melhor Volta</b></td>';
 		$html .= '<td><b>Data Hora</b></td>';
+		$html .= '<td><b>Pontos</b></td>';
 		$html .= '</tr>';
 		
 		//Selecionar todos os itens da tabela 
@@ -71,6 +72,7 @@
             $html .= '<td>'.$row_msg_contatos["corrida_10"].'</td>';
             $html .= '<td>'.$row_msg_contatos["melhor_volta"].'</td>';
 			$html .= '<td>'.$row_msg_contatos["data_hora"].'</td>';
+			$html .= '<td>'.$row_msg_contatos["pontos"].'</td>';
 			$html .= '</tr>';
 			;
 		}

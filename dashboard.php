@@ -55,7 +55,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="conteudo" class="form-label">Conteúdo</label>
-                            <textarea class="form-control" name="conteudo" id="conteudo" rows="3"></textarea>
+                            <textarea class="form-control editor" name="conteudo" id="conteudo" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
                             <button type="submit" name="blog" class="btn btn-success">Publicar</button>
@@ -1042,6 +1042,19 @@
         });
 
     </script>
+
+    <script src="build/ckeditor.js"></script>
+	<script>ClassicEditor
+		.create( document.querySelector( '.editor' ), {		
+			licenseKey: '',
+		} )
+		.then( editor => {
+			window.editor = editor;		
+		} )
+		.catch( error => {
+			console.error( error );
+		} );
+	</script>
 </body>
 
 </html>
