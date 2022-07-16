@@ -187,21 +187,8 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <select name="melhor_volta" class="form-select" >
-                            <option selected>Melhor volta</option>
-                            <?php
-                                $sql = "SELECT * FROM pilotos";
-                                $resultado = mysqli_query($connect, $sql); 
-                                    while ($dadosPilotos = mysqli_fetch_array($resultado)):
-                            ?>
-                            <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
-                    </div>
-
                     <div class="mb-3 d-grid gap-2">
-                        <button type="submit" name="criar-palpite" class="btn btn-outline-success">Enviar Palpite</button>
+                        <button type="submit" name="criar-palpite-grid" class="btn btn-outline-success">Enviar Palpite</button>
                     </div>
                     
                 </form>
@@ -215,7 +202,7 @@
             <div class="list-group mt-1">
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white"> CADASTRO E PALPITES </a>
                 <a href="form_cadastro.php" class="list-group-item list-group-item-action">CADASTRO AQUI</a>
-                <a href="form_palpite_grid.php" class="list-group-item list-group-item-action">PALPITE GRID</a>
+                <a href="form_palpite.php" class="list-group-item list-group-item-action">PALPITE CORRIDA</a>
             </div>
 
             <ul class="list-group mt-1">

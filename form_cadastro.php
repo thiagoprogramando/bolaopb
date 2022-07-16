@@ -83,7 +83,8 @@
 
             <div class="list-group mt-1">
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white"> CADASTRO E PALPITES </a>
-                <a href="form_palpite.php" class="list-group-item list-group-item-action">PALPITE AQUI</a>
+                <a href="form_palpite.php" class="list-group-item list-group-item-action">PALPITE CORRIDA</a>
+                <a href="form_palpite_grid.php" class="list-group-item list-group-item-action">PALPITE GRID</a>
             </div>
 
             <ul class="list-group mt-1">

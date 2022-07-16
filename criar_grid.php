@@ -31,29 +31,28 @@
 		$html = '';
 		$html .= '<table border="1">';
 		$html .= '<tr>';
-		$html .= '<td colspan="5"><center><font style="text-align: center; font-size: 20px;"><strong>Planilha Com Palpites</strong></font></center></tr>';
+		$html .= '<td colspan="5"><center><font style="text-align: center; font-size: 20px;"><strong>Planilha Com Palpites GRID</strong></font></center></tr>';
 		$html .= '<td colspan="5"><center><font style="text-align: center; font-size: 30px;"><strong> '."$local"." - "."$circuito".' </strong></font></center></tr>';
 		$html .= '</tr>';
 		
 		
 		$html .= '<tr>';
 		$html .= '<td><b>Nome</b></td>';
-	    $html .= '<td><b>1° Corrida</b></td>';
-	    $html .= '<td><b>2° Corrida</b></td>';
-	    $html .= '<td><b>3° Corrida</b></td>';
-	    $html .= '<td><b>4° Corrida</b></td>';
-	    $html .= '<td><b>5° Corrida</b></td>';
-	    $html .= '<td><b>6° Corrida</b></td>';
-	    $html .= '<td><b>7° Corrida</b></td>';
-	    $html .= '<td><b>8° Corrida</b></td>';
-	    $html .= '<td><b>9° Corrida</b></td>';
-	    $html .= '<td><b>10° Corrida</b></td>';
-        $html .= '<td><b>Melhor Volta</b></td>';
-		$html .= '<td><b>Data Hora</b></td>';
+	    $html .= '<td><b>1° GRID</b></td>';
+	    $html .= '<td><b>2° GRID</b></td>';
+	    $html .= '<td><b>3° GRID</b></td>';
+	    $html .= '<td><b>4° GRID</b></td>';
+	    $html .= '<td><b>5° GRID</b></td>';
+	    $html .= '<td><b>6° GRID</b></td>';
+	    $html .= '<td><b>7° GRID</b></td>';
+	    $html .= '<td><b>8° GRID</b></td>';
+	    $html .= '<td><b>9° GRID</b></td>';
+	    $html .= '<td><b>10° GRID</b></td>';
+        $html .= '<td><b>Data Hora</b></td>';
 		$html .= '</tr>';
 		
 		//Selecionar todos os itens da tabela 
-		$result_msg_contatos = "SELECT * FROM palpites WHERE id_corrida = '$id'";
+		$result_msg_contatos = "SELECT * FROM palpites_grid WHERE id_corrida = '$id'";
 		$resultado_msg_contatos = mysqli_query($connect , $result_msg_contatos);
 		
 		while($row_msg_contatos = mysqli_fetch_assoc($resultado_msg_contatos)){
@@ -69,8 +68,7 @@
 			$html .= '<td>'.$row_msg_contatos["corrida_8"].'</td>';
 			$html .= '<td>'.$row_msg_contatos["corrida_9"].'</td>';
             $html .= '<td>'.$row_msg_contatos["corrida_10"].'</td>';
-            $html .= '<td>'.$row_msg_contatos["melhor_volta"].'</td>';
-			$html .= '<td>'.$row_msg_contatos["data_hora"].'</td>';
+            $html .= '<td>'.$row_msg_contatos["data_hora"].'</td>';
 			$html .= '</tr>';
 			;
 		}

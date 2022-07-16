@@ -191,8 +191,10 @@
                                     <th scope="col">Local</th>
                                     <th scope="col">Circuito</th>
                                     <th class="text-center" scope="col">Ação</th>
-                                    <th class="text-center" scope="col">Palpites</th>
-                                    <th class="text-center" scope="col">Resultado</th>
+                                    <th class="text-center" scope="col">P Corrida</th>
+                                    <th class="text-center" scope="col">P Grid</th>
+                                    <th class="text-center" scope="col">R Corrida</th>
+                                    <th class="text-center" scope="col">R Grid</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -219,7 +221,15 @@
                                         <a href="criar.php?id=<?php echo $dadosCorrida['id']; ?>" class="btn btn-success"><i class="bi bi-download"></i></a>
                                     </td>
                                     <td class="text-center">
+                                        <a href="criar_grid.php?id=<?php echo $dadosCorrida['id']; ?>" class="btn btn-success"><i class="bi bi-download"></i></a>
+                                    </td>
+                                    <td class="text-center">
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCorrida<?php echo $num; ?>">
+                                            <i class="bi bi-arrow-up-circle-fill"></i>
+                                        </button>
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalGrid<?php echo $num; ?>">
                                             <i class="bi bi-arrow-up-circle-fill"></i>
                                         </button>
                                     </td>
@@ -375,6 +385,162 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                                 <button type="submit" name="adicionar-resultado" class="btn btn-success">Aplicar</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modalGrid<?php echo $num; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Aplicar Resultado</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="script.php" method="POST">
+                                                    <div class="row">
+                                                        
+                                                        <input type="hidden" value="<?php echo $dadosCorrida['id']; ?>" name="id_corrida">
+                                                        
+                                                        <div class="mb-3">
+                                                            <select name="corrida_1" class="form-select">
+                                                                <option selected>1° no Grid</option>
+                                                                <?php
+                                                                    $sql1 = "SELECT * FROM pilotos";
+                                                                    $resultado1 = mysqli_query($connect, $sql1); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado1)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_2" class="form-select">
+                                                                <option selected>2° no Grid</option>
+                                                                <?php
+                                                                    $sql2 = "SELECT * FROM pilotos";
+                                                                    $resultado2 = mysqli_query($connect, $sql2); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado2)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_3" class="form-select">
+                                                                <option selected>3° no Grid</option>
+                                                                <?php
+                                                                    $sql3 = "SELECT * FROM pilotos";
+                                                                    $resultado3 = mysqli_query($connect, $sql3); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado3)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_4" class="form-select">
+                                                                <option selected>4° no Grid</option>
+                                                                <?php
+                                                                    $sql4 = "SELECT * FROM pilotos";
+                                                                    $resultado4 = mysqli_query($connect, $sql4); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado4)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_5" class="form-select">
+                                                                <option selected>5° no Grid</option>
+                                                                <?php
+                                                                    $sql5 = "SELECT * FROM pilotos";
+                                                                    $resultado5 = mysqli_query($connect, $sql5); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado5)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_6" class="form-select">
+                                                                <option selected>6° no Grid</option>
+                                                                <?php
+                                                                    $sql6 = "SELECT * FROM pilotos";
+                                                                    $resultado6 = mysqli_query($connect, $sql6); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado6)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_7" class="form-select">
+                                                                <option selected>7° no Grid</option>
+                                                                <?php
+                                                                    $sql7 = "SELECT * FROM pilotos";
+                                                                    $resultado7 = mysqli_query($connect, $sql7); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado7)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_8" class="form-select">
+                                                                <option selected>8° no Grid</option>
+                                                                <?php
+                                                                    $sql8 = "SELECT * FROM pilotos";
+                                                                    $resultado8 = mysqli_query($connect, $sql8); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado8)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_9" class="form-select">
+                                                                <option selected>9° no Grid</option>
+                                                                <?php
+                                                                    $sql9 = "SELECT * FROM pilotos";
+                                                                    $resultado9 = mysqli_query($connect, $sql9); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado9)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <select name="corrida_10" class="form-select">
+                                                                <option selected>10° no Grid</option>
+                                                                <?php
+                                                                    $sql10 = "SELECT * FROM pilotos";
+                                                                    $resultado10 = mysqli_query($connect, $sql10); 
+                                                                        while ($dadosPilotos = mysqli_fetch_array($resultado10)):
+                                                                ?>
+                                                                <option value="<?php echo $dadosPilotos['nome']; ?>"><?php echo $dadosPilotos['nome']; ?></option>
+                                                                <?php endwhile; ?>
+                                                            </select>
+                                                        </div>
+                                                        
+                                                    </div>
+                                        
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                                <button type="submit" name="adicionar-grid" class="btn btn-success">Aplicar</button>
                                                 </form>
                                             </div>
                                         </div>

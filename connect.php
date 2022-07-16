@@ -2,9 +2,9 @@
 
 	// Conexão com o banco de dados
 	$servername = "localhost";
-	$username = "u860881213_paulobarra";
-	$password = "Ts22082020#";
-	$db_name = "u860881213_bolao_pb";
+	$username = "root";
+	$password = "";
+	$db_name = "bolao_pb";
 
 	$connect = mysqli_connect($servername, $username, $password, $db_name);
 	mysqli_set_charset($connect, "utf8");

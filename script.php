@@ -113,52 +113,135 @@
         $resultado = mysqli_query($connect, $sql); 
             while ($dadosPalpites = mysqli_fetch_array($resultado)):
                 
-                if($dadosPalpites['corrida_1'] === '$corrida1'):
-                    $sql = "UPDATE user SET pontos = pontos + 25 WHERE nome = '$dadosPalpites[nome]'";
+                if($dadosPalpites['corrida_1'] == $corrida1):
+                    $sql = "UPDATE user SET pontos = pontos + 25 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_2'] === '$corrida2'):
-                    $sql = "UPDATE user SET pontos = pontos + 18 WHERE nome = '$dadosPalpites[nome]'";
+                if($dadosPalpites['corrida_2'] == $corrida2):
+                    $sql = "UPDATE user SET pontos = pontos + 18 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_3'] === '$corrida3'):
-                    $sql = "UPDATE user SET pontos = pontos + 15 WHERE nome = '$dadosPalpites[nome]'";
+                if($dadosPalpites['corrida_3'] == $corrida3):
+                    $sql = "UPDATE user SET pontos = pontos + 15 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_4'] === '$corrida4'):
-                    $sql = "UPDATE user SET pontos = pontos + 12 WHERE nome = '$dadosPalpites[nome]'";
+                if($dadosPalpites['corrida_4'] == $corrida4):
+                    $sql = "UPDATE user SET pontos = pontos + 12 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_5'] === '$corrida5'):
-                    $sql = "UPDATE user SET pontos = pontos + 10 WHERE nome = '$dadosPalpites[nome]'";
+                if($dadosPalpites['corrida_5'] == $corrida5):
+                    $sql = "UPDATE user SET pontos = pontos + 10 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_6'] === '$corrida6'):
-                    $sql = "UPDATE user SET pontos = pontos + 8 WHERE nome = '$dadosPalpites[nome]'";
+                if($dadosPalpites['corrida_6'] == $corrida6):
+                    $sql = "UPDATE user SET pontos = pontos + 8 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_7'] === '$corrida7'):
+                if($dadosPalpites['corrida_7'] == $corrida7):
                     $sql = "UPDATE user SET pontos = pontos + 6 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_8'] === '$corrida8'):
+                if($dadosPalpites['corrida_8'] == $corrida8):
                     $sql = "UPDATE user SET pontos = pontos + 4 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_9'] === '$corrida9'):
+                if($dadosPalpites['corrida_9'] == $corrida9):
                     $sql = "UPDATE user SET pontos = pontos + 2 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
                 
-                if($dadosPalpites['corrida_10'] === '$corrida10'):
+                if($dadosPalpites['corrida_10'] == $corrida10):
+                    $sql = "UPDATE user SET pontos = pontos + 1 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+        endwhile;
+        
+        ?> 
+            <script>
+                alert("Sucesso!");
+                window.location.href = "dashboard.php";
+            </script> 
+        <?php
+        
+    endif;
+
+    //Aplicar Resultado
+    if(isset($_POST['adicionar-grid'])):
+
+        //Dados
+        $id = mysqli_escape_string($connect, $_POST['id_corrida']);
+        $corrida1 = mysqli_escape_string($connect, $_POST['corrida_1']);
+        $corrida2 = mysqli_escape_string($connect, $_POST['corrida_2']);
+        $corrida3 = mysqli_escape_string($connect, $_POST['corrida_3']);
+        $corrida4 = mysqli_escape_string($connect, $_POST['corrida_4']);
+        $corrida5 = mysqli_escape_string($connect, $_POST['corrida_5']);
+        $corrida6 = mysqli_escape_string($connect, $_POST['corrida_6']);
+        $corrida7 = mysqli_escape_string($connect, $_POST['corrida_7']);
+        $corrida8 = mysqli_escape_string($connect, $_POST['corrida_8']);
+        $corrida9 = mysqli_escape_string($connect, $_POST['corrida_9']);
+        $corrida10 = mysqli_escape_string($connect, $_POST['corrida_10']);
+        
+    
+        //SELECIONA TODOS OS PALPITES E CASO ACERTE ADICIONA PONTUAÇÂO
+        $sql = "SELECT * FROM palpites_grid WHERE id_corrida = '$id'";
+        $resultado = mysqli_query($connect, $sql); 
+            while ($dadosPalpites = mysqli_fetch_array($resultado)):
+                
+                if($dadosPalpites['corrida_1'] == $corrida1):
+                    $sql = "UPDATE user SET pontos = pontos + 25 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql);
+                endif;
+                
+                if($dadosPalpites['corrida_2'] == $corrida2):
+                    $sql = "UPDATE user SET pontos = pontos + 18 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_3'] == $corrida3):
+                    $sql = "UPDATE user SET pontos = pontos + 15 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_4'] == $corrida4):
+                    $sql = "UPDATE user SET pontos = pontos + 12 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_5'] == $corrida5):
+                    $sql = "UPDATE user SET pontos = pontos + 10 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_6'] == $corrida6):
+                    $sql = "UPDATE user SET pontos = pontos + 8 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_7'] == $corrida7):
+                    $sql = "UPDATE user SET pontos = pontos + 6 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_8'] == $corrida8):
+                    $sql = "UPDATE user SET pontos = pontos + 4 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_9'] == $corrida9):
+                    $sql = "UPDATE user SET pontos = pontos + 2 WHERE email = '$dadosPalpites[email]'";
+                    mysqli_query($connect, $sql); 
+                endif;
+                
+                if($dadosPalpites['corrida_10'] == $corrida10):
                     $sql = "UPDATE user SET pontos = pontos + 1 WHERE email = '$dadosPalpites[email]'";
                     mysqli_query($connect, $sql); 
                 endif;
@@ -390,7 +473,7 @@
             endif;
     endif;
 
-    //Criar User
+    //Criar Palpite Corrida
     if(isset($_POST['criar-palpite'])):
 
         //Dados
@@ -407,15 +490,52 @@
         $corrida_8 = mysqli_escape_string($connect, $_POST['corrida_8']);
         $corrida_9 = mysqli_escape_string($connect, $_POST['corrida_9']);
         $corrida_10 = mysqli_escape_string($connect, $_POST['corrida_10']);
-        $grid_1 = mysqli_escape_string($connect, $_POST['grid_1']);
-        $grid_2 = mysqli_escape_string($connect, $_POST['grid_2']);
-        $grid_3 = mysqli_escape_string($connect, $_POST['grid_3']);
-        $grid_4 = mysqli_escape_string($connect, $_POST['grid_4']);
         $melhor_volta = mysqli_escape_string($connect, $_POST['melhor_volta']);
+        $data = date('d/m/Y'). ' - ' .date('H:i:s');
 
         //Cadastra no DB
-        $sql = "INSERT INTO palpites (nome, email, id_corrida, corrida_1, corrida_2, corrida_3, corrida_4, corrida_5, corrida_6, corrida_7, corrida_8, corrida_9, corrida_10, grid_1, grid_2, grid_3, grid_4, melhor_volta) 
-        VALUES ('$nome', '$email', '$id_corrida', '$corrida_1', '$corrida_2', '$corrida_3', '$corrida_4', '$corrida_5', '$corrida_6', '$corrida_7', '$corrida_8', '$corrida_9', '$corrida_10', '$grid_1', '$grid_2', '$grid_3', '$grid_4', '$melhor_volta')";
+        $sql = "INSERT INTO palpites (nome, email, id_corrida, corrida_1, corrida_2, corrida_3, corrida_4, corrida_5, corrida_6, corrida_7, corrida_8, corrida_9, corrida_10, melhor_volta) 
+        VALUES ('$nome', '$email', '$id_corrida', '$corrida_1', '$corrida_2', '$corrida_3', '$corrida_4', '$corrida_5', '$corrida_6', '$corrida_7', '$corrida_8', '$corrida_9', '$corrida_10', '$melhor_volta')";
+    
+            if(mysqli_query($connect, $sql)):
+                    ?> 
+                      <script>
+                          alert("Sucesso!");
+                          window.location.href = "index.php";
+                      </script> 
+                    <?php
+                else:
+                    ?> 
+                    <script>
+                        alert("Erro!");
+                        window.location.href = "index.php";
+                    </script> 
+                    <?php
+            endif;
+    endif;
+
+    //Criar Palpite grid
+    if(isset($_POST['criar-palpite-grid'])):
+
+        //Dados
+        $nome = mysqli_escape_string($connect, $_POST['nome']);
+        $email = mysqli_escape_string($connect, $_POST['email']);
+        $id_corrida = mysqli_escape_string($connect, $_POST['id_corrida']);
+        $corrida_1 = mysqli_escape_string($connect, $_POST['corrida_1']);
+        $corrida_2 = mysqli_escape_string($connect, $_POST['corrida_2']);
+        $corrida_3 = mysqli_escape_string($connect, $_POST['corrida_3']);
+        $corrida_4 = mysqli_escape_string($connect, $_POST['corrida_4']);
+        $corrida_5 = mysqli_escape_string($connect, $_POST['corrida_5']);
+        $corrida_6 = mysqli_escape_string($connect, $_POST['corrida_6']);
+        $corrida_7 = mysqli_escape_string($connect, $_POST['corrida_7']);
+        $corrida_8 = mysqli_escape_string($connect, $_POST['corrida_8']);
+        $corrida_9 = mysqli_escape_string($connect, $_POST['corrida_9']);
+        $corrida_10 = mysqli_escape_string($connect, $_POST['corrida_10']);
+        $data = date('d/m/Y'). ' - ' .date('H:i:s');
+
+        //Cadastra no DB
+        $sql = "INSERT INTO palpites_grid (nome, email, id_corrida, corrida_1, corrida_2, corrida_3, corrida_4, corrida_5, corrida_6, corrida_7, corrida_8, corrida_9, corrida_10, data_hora) 
+        VALUES ('$nome', '$email', '$id_corrida', '$corrida_1', '$corrida_2', '$corrida_3', '$corrida_4', '$corrida_5', '$corrida_6', '$corrida_7', '$corrida_8', '$corrida_9', '$corrida_10', '$data')";
     
             if(mysqli_query($connect, $sql)):
                     ?> 
